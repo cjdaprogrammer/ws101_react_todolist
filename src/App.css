@@ -1,16 +1,16 @@
-/* Overall Background */
+/* Body Styling */
 body {
-  background-color: #000; /* Dark background for neon effect */
-  font-family: 'Poppins', sans-serif;
-  color: white;
+  background-color: #101010; /* Dark background for tech theme */
+  font-family: 'Roboto Mono', monospace; /* Tech-like monospaced font */
+  color: #00e7ff; /* Neon blue text color */
   margin: 0;
   padding: 0;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  background-image: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
 }
-
 
 /* Neon Title */
 h1 {
@@ -19,9 +19,9 @@ h1 {
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 20px;
-  position: relative;
   font-weight: bold;
   letter-spacing: 2px;
+  position: relative;
   animation: neon-glow-blue 1.5s ease-in-out infinite alternate;
 }
 
@@ -39,6 +39,37 @@ h1 {
   }
 }
 
+/* Container Styling with Neon Blue Glow */
+.app-container {
+  background: rgba(20, 20, 20, 0.9); /* Slightly transparent dark background */
+  padding: 30px; /* Adequate padding */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 0 30px rgba(0, 231, 255, 0.8), /* Neon blue glow */
+              inset 0 0 10px rgba(0, 231, 255, 0.4); /* Inner glow */
+  border: 2px solid rgba(0, 231, 255, 0.5); /* Neon blue border */
+  max-width: 600px;
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app-container:hover {
+  transform: scale(1.02); /* Slight zoom on hover */
+  box-shadow: 0 0 50px rgba(0, 231, 255, 1), /* Stronger neon blue glow on hover */
+              inset 0 0 15px rgba(0, 231, 255, 0.6);
+}
+
+/* Task Group Headings */
+h2 {
+  color: #29d398; /* Neon green for headings */
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
 
 /* Form Styling */
 .add-todo-form {
@@ -52,8 +83,8 @@ h1 {
   padding: 10px;
   border-radius: 4px;
   border: 1px solid #444;
-  background-color: #2a2a2a;
-  color: white;
+  background-color: #202020;
+  color: #00e7ff;
   font-size: 1rem;
 }
 
@@ -62,253 +93,118 @@ h1 {
   margin-left: 10px;
   padding: 10px;
   border-radius: 4px;
-  background-color: #2a2a2a;
-  color: white;
+  background-color: #202020;
+  color: #00e7ff;
 }
 
-.add-todo-form button {
+/* Buttons */
+button {
   padding: 10px 15px;
-  background-color: #ff00ff;
+  background-color: #00e7ff; /* Neon Blue */
   color: white;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 4px;
   cursor: pointer;
   margin-left: 10px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.add-todo-form button:hover {
-  background-color: #e600e6;
-  transform: scale(1.05);
-}
-
-/* ToDo List Styling */
-.todo-list {
-  list-style: none;
-  padding: 0;
-}
-
-.todo-list li {
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #2e2e2e;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 4px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  animation: fadeIn 0.5s ease;
-}
-
-.todo-list li.completed span {
-  text-decoration: line-through;
-  color: #9e9e9e;
-  transition: color 0.3s ease, text-decoration 0.3s ease;
-}
-
-/* Animation for Adding a New ToDo */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Animation for Removing ToDo */
-.todo-list li.removed {
-  animation: slideOut 0.5s forwards;
-}
-
-@keyframes slideOut {
-  0% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-}
-
-/* ToDo Buttons */
-/* ToDo Buttons */
-.todo-list button {
-  background-color: #ff00ff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  padding: 5px 10px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-left: 5px; /* Add margin for spacing between buttons */
-}
-
-.todo-list button:hover {
-  background-color: #e600e6;
-  transform: scale(1.05);
-}
-
-/* Container for buttons */
-.button-container {
-  display: flex; /* Use flexbox for alignment */
-  justify-content: flex-end; /* Align buttons to the right */
-  align-items: center; /* Center buttons vertically */
-}
-
-/* Adjust the list item to accommodate button container */
-.todo-list li {
-  padding: 10px;
-  margin: 10px 0 10px 20px; /* Set left margin to 20px */
-  background-color: #2e2e2e;
-  display: flex;
-  justify-content: space-between; /* Space between text and buttons */
-  align-items: center; /* Center items vertically */
-  border-radius: 4px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* Adjusted emoticon styling */
-.todo-list li span {
-  font-size: 1.5rem; /* Size for the emoticon */
-  margin-right: 10px; /* Space between emoticon and text */
-}
-
-/* Completed tasks */
-.todo-list li.completed span {
-  text-decoration: line-through;
-  color: #9e9e9e;
-}
-
-.todo-item.completed span {
-  text-decoration: line-through;
-  color: #9e9e9e;
-}
-
-.todo-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px 10px;
-  margin-bottom: 0 5px;
-  border-radius: 10px;
-  background-color: #1e1e1e; /* Background color for task */
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); /* Neon glow */
-  cursor: pointer;
-}
-
-.todo-text {
-  font-size: 18px;
-  color: #fff; /* Text color */
-}
-
-.todo-text.completed {
-  text-decoration: line-through;
-  color: #888; /* Grey out the completed task */
-}
-
-button {
-  background-color: #ff00ff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin-left: 10px; /* Space between buttons */
-  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s;
 }
 
 button:hover {
-  background-color: #ff55ff; /* Slight hover effect */
+  background-color: #29d398; /* Neon Green on hover */
+  border-color: #00e7ff; /* Blue neon border on hover */
+  transform: scale(1.05);
 }
 
 .complete-btn {
-  background-color: #00ff00; /* Green for complete button */
-}
-
-.complete-btn:hover {
   background-color: #33ff33;
 }
 
+.complete-btn:hover {
+  background-color: #29d398;
+}
+
 .edit-btn {
-  background-color: #ffa500; /* Orange for edit button */
+  background-color: #ffa500;
 }
 
 .edit-btn:hover {
-  background-color: #ffb733;
+  background-color: #ffc107;
 }
 
 .remove-btn {
-  background-color: #ff0000; /* Red for remove button */
+  background-color: #ff0000;
 }
 
 .remove-btn:hover {
   background-color: #ff3333;
 }
 
-/* App.css */
-
-/* Base styles */
-.app-container {
-  background: linear-gradient(135deg, #1f1c2c 0%, #928DAB 100%); /* Example gradient for the background */
-  min-height: 100vh; /* Full height of the viewport */
-  padding: 20px; /* Adjust padding as needed */
-  color: white; /* Change text color for better contrast */
-  display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center align items */
-}
-
-/* Todo item styles */
+/* ToDo List Styling */
 .todo-item {
-  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for todo items */
-  padding: 10px; /* Add some padding */
-  border-radius: 8px; /* Rounded corners */
-  margin: 10px 0; /* Space between todo items */
-  width: 100%; /* Full width on mobile */
-  max-width: 500px; /* Limit max width on larger screens */
+  background: rgba(50, 50, 50, 0.7); /* Semi-transparent background */
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+  width: 100%;
+  max-width: 600px; /* Limit width */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2); /* Subtle neon glow */
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Button styles */
-.complete-btn,
-.edit-btn,
-.remove-btn {
-  margin: 0 5px; /* Little space between buttons */
+.todo-item:hover {
+  transform: scale(1.02); /* Slight zoom on hover */
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
 }
 
-/* Media queries for responsiveness */
+/* Task text */
+.todo-text {
+  color: #fff; /* White text */
+  font-size: 1.2rem;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Emoticon Styling */
+.todo-item span {
+  font-size: 1.8rem; /* Larger emoticons */
+  margin-right: 10px;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
   .app-container {
-    padding: 10px; /* Less padding on smaller screens */
+    padding: 15px;
   }
 
   .todo-item {
-    padding: 8px; /* Adjust padding for mobile */
+    padding: 12px;
   }
 
   h1, h2 {
-    font-size: 24px; /* Smaller heading on mobile */
+    font-size: 24px;
   }
 }
 
 @media (min-width: 769px) {
   .app-container {
-    padding: 20px; /* More padding on larger screens */
+    padding: 30px;
   }
 
   .todo-item {
-    padding: 15px; /* Adjust padding for desktop */
+    padding: 15px;
   }
 
   h1 {
-    font-size: 36px; /* Larger heading on desktop */
+    font-size: 36px;
   }
 
   h2 {
-    font-size: 30px; /* Larger subheading on desktop */
+    font-size: 30px;
   }
 }

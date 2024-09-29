@@ -6,7 +6,7 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [editIndex, setEditIndex] = useState(null); // Track the task being edited
 
-  // Updated array of emoticons with additional icons
+  // Updated array of emoticons with additional technology-related icons
   const emoticons = {
     basketball: "🏀",
     volleyball: "🏐",
@@ -29,7 +29,7 @@ function App() {
     baseball: "⚾",
     chess: "♟️",
     "listening to music": "🎵",
-    "traveling": "✈️",
+    traveling: "✈️",
     "playing games": "📱",
     "cyber security": "🛡️",
     "taking notes": "📝",
@@ -45,7 +45,17 @@ function App() {
     party: "🎊",
     programming: "👨‍💻",
     computer: "🖥️",
-    hacking: "👾"
+    hacking: "👾",
+    networking: "🌐",
+    "software development": "💻",
+    security: "🔒",
+    server: "🖥️",
+    "data analysis": "📊",
+    cloud: "☁️",
+    IT: "🖥️",
+    "artificial intelligence": "🤖",
+    "database management": "💾",
+    "virtual reality": "🕶️"
   };
 
   // Function to get emoticon based on the task description
